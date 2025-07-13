@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import TopNav from './components/TopNav';
 
 export default function Home() {
@@ -82,18 +83,18 @@ export default function Home() {
     <div>
       <h5 className="text-lg font-semibold mb-2">Follow Us</h5>
       <div className="flex space-x-4">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
           <img src="/facebook.svg" alt="Facebook" className="w-6 h-6" />
-        </a>
-        <a href="https://www.instagram.com/coast_cityhomes_001?igsh=cG9raTBnMHBjcDBp" target="_blank" rel="noopener noreferrer">
+        </Link>
+        <Link href="https://www.instagram.com/coast_cityhomes_001?igsh=cG9raTBnMHBjcDBp" target="_blank" rel="noopener noreferrer">
           <img src="/instagram.svg" alt="Instagram" className="w-6 h-6" />
-        </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        </Link>
+        <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <img src="/twitter.svg" alt="Twitter" className="w-6 h-6" />
-        </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+        </Link>
+        <Link href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
           <img src="/facebook.svg" alt="Tiktok" className="w-6 h-6" />
-        </a>
+        </Link>
       </div>
     </div>
 
@@ -101,9 +102,9 @@ export default function Home() {
     <div>
       <h5 className="text-lg font-semibold mb-2">Chat with Us</h5>
       <div className="flex space-x-4">
-        <a href="https://wa.me/254713122760" target="_blank" rel="noopener noreferrer">
+        <Link href="https://wa.me/254713122760" target="_blank" rel="noopener noreferrer">
           <img src="/whatsapp.svg" alt="Whatsapp" className="w-6 h-6" />
-        </a>
+        </Link>
       </div>
     </div>
   </div>
@@ -118,7 +119,7 @@ export default function Home() {
 <div className="fixed bottom-6 right-6 flex flex-col items-end space-y-3 z-50">
 
   {/* WhatsApp */}
-  <a
+  <Link
     href="https://wa.me/254713122760"
     target="_blank"
     rel="noopener noreferrer"
@@ -126,10 +127,10 @@ export default function Home() {
     aria-label="Chat on WhatsApp"
   >
     <img src="/whatsapp.svg" alt="WhatsApp" className="w-6 h-6" />
-  </a>
+  </Link>
 
   {/* TikTok */}
-  <a
+  <Link
     href="https://tiktok.com/@coastcityhomes"  // Replace with your real TikTok handle
     target="_blank"
     rel="noopener noreferrer"
@@ -137,7 +138,7 @@ export default function Home() {
     aria-label="Visit our TikTok"
   >
     <img src="/tiktok.svg" alt="TikTok" className="w-6 h-6" />
-  </a>
+  </Link>
 </div>
 
 

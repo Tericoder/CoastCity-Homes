@@ -4,6 +4,7 @@ import React from 'react';
 import TopNav from '../components/TopNav';
 import Footer from '../components/Footer';
 import FloatingIcons from '../components/FloatingIcons';
+import Link from 'next/link';
 
 export default function SignUp() {
   return (
@@ -91,9 +92,9 @@ export default function SignUp() {
 
           <p className="mt-6 text-center text-sm text-gray-600">
             Already have an account?{' '}
-            <a href="/login" className="font-bold text-blue-600 hover:underline">
+            <Link href="/login" className="font-bold text-blue-600 hover:underline">
               Log In
-            </a>
+            </Link>
           </p>
         </div>
       </main>

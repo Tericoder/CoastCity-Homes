@@ -1,4 +1,5 @@
 // src/app/components/Footer.tsx
+import Link from 'next/link';
 import React from 'react';
 
 export default function Footer() {
@@ -24,9 +25,9 @@ export default function Footer() {
         <div>
           <h5 className="text-lg font-semibold mb-2">Quick Links</h5>
           <ul className="text-sm space-y-1">
-            <li><a href="#" className="hover:text-blue-600">Explore Listings</a></li>
-            <li><a href="#" className="hover:text-blue-600">FAQs</a></li>
-            <li><a href="#" className="hover:text-blue-600">Contact</a></li>
+            <li><Link href="#" className="hover:text-blue-600">Explore Listings</Link></li>
+            <li><Link href="#" className="hover:text-blue-600">FAQs</Link></li>
+            <li><Link href="#" className="hover:text-blue-600">Contact</Link></li>
           </ul>
         </div>
 
@@ -34,15 +35,15 @@ export default function Footer() {
         <div>
           <h5 className="text-lg font-semibold mb-2">Follow Us</h5>
           <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <img src="/facebook.svg" alt="Facebook" className="w-6 h-6" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            </Link>
+            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <img src="/instagram.svg" alt="Instagram" className="w-6 h-6" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            </Link>
+            <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <img src="/twitter.svg" alt="Twitter" className="w-6 h-6" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -50,9 +51,9 @@ export default function Footer() {
         <div>
           <h5 className="text-lg font-semibold mb-2">Chat with Us</h5>
           <div className="flex space-x-4">
-            <a href="https://wa.me/254713122760" target="_blank" rel="noopener noreferrer">
+            <Link href="https://wa.me/254713122760" target="_blank" rel="noopener noreferrer">
               <img src="/whatsapp.svg" alt="WhatsApp" className="w-6 h-6" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
