@@ -5,13 +5,24 @@ import TopNav from '@/app/components/TopNav';
 import Footer from '@/app/components/Footer';
 import FloatingIcons from '@/app/components/FloatingIcons';
 
-export async function generateStaticParams() {
-  return listingsData.map((listing) => ({
-    slug: listing.slug,
-  }));
+// type Props = {
+//   params: {
+//     slug: string;
+//   };
+// };
+
+// export function generateStaticParams() {
+//   return listingsData.map((listing) => ({
+//     slug: listing.slug,
+//   }));
+// }
+export interface PageProps {
+  params: {
+    slug: string;
+  };
 }
 
-export default function ListingDetailPage({ params }: { params: { slug: string } }) {
+export default function ListingDetailPage({ params }: PageProps) {
   const listing = listingsData.find((l) => l.slug === params.slug);
   if (!listing) return notFound();
 
