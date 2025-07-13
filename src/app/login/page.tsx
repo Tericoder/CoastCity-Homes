@@ -4,6 +4,7 @@ import React from 'react';
 import TopNav from '../components/TopNav';
 import Footer from '../components/Footer';
 import FloatingIcons from '../components/FloatingIcons';
+import Link from 'next/link';
 
 export default function Login() {
   return (
@@ -62,10 +63,10 @@ export default function Login() {
           </form>
 
           <p className="mt-6 text-center text-sm text-gray-600">
-            Don't have an account?{' '}
-            <a href="/signup" className="font-bold text-blue-600 hover:underline">
+            Don't have an account
+            <Link href="/signup" className="font-bold text-blue-600 hover:underline">
               Sign Up
-            </a>
+            </Link>
           </p>
         </div>
       </main>
