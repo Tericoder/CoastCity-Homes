@@ -1,5 +1,0 @@
-declare module "next" {
-  export interface PageProps<TParams = {}> {
-    params: TParams; // ✅ object, not Promise
-  }
-}
