@@ -1,9 +1,10 @@
+// next.config.ts
 const nextConfig = {
   images: {
     domains: ['localhost'],
   },
   eslint: {
-    ignoreDuringBuilds: true, // Add this line
+    ignoreDuringBuilds: true, // ← Add this line
   },
 };
 
