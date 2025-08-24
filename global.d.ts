@@ -1,5 +1,6 @@
+// global.d.ts
 declare module "next" {
   export interface PageProps<TParams = {}> {
-    params: TParams; // ✅ object, not Promise
+    params: TParams; // ✅ overwrite with object type
   }
 }
