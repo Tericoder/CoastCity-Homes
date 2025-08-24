@@ -5,6 +5,7 @@ import TopNav from '../components/TopNav';
 import Footer from '../components/Footer';
 import FloatingIcons from '../components/FloatingIcons';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Listing {
   id: string;
@@ -145,41 +146,51 @@ export default function ListingsPage() {
   const uniqueLocations = Array.from(new Set(listings.map((l) => l.location)));
 
   return (
-    <main className="font-sans">
+    <main className="font-sans min-h-screen">
       <TopNav />
 
-      <section className="bg-blue-50 py-14 px-6 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">
-          Explore Furnished Listings
-        </h1>
-        <p className="text-gray-600 max-w-xl mx-auto">
-          Verified, affordable short stays across the Kenyan coast.
-        </p>
+      {/* Hero Section */}
+      <section className="bg-blue-50 py-10 px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+            Explore Furnished Listings
+          </h1>
+          <p className="text-gray-600 text-base sm:text-lg">
+            Verified, affordable short stays across the Kenyan coast.
+          </p>
+        </div>
       </section>
 
-      <section className="px-6 py-12 max-w-7xl mx-auto space-y-16">
+      {/* Listings Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-8 lg:py-12 max-w-7xl mx-auto space-y-12">
         {uniqueLocations.map((location) => (
-          <div key={location}>
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          <div key={location} className="space-y-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
               {location} Homes
             </h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {listings
                 .filter((l) => l.location === location)
                 .map((listing) => (
-                  <Link href={`/listings/${listing.slug}`} key={listing.id}>
-                    <div className="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden cursor-pointer">
-                      <img
-                        src={listing.image}
-                        alt={listing.name}
-                        className="w-full h-48 object-cover"
-                      />
-                      <div className="p-4">
-                        <h3 className="font-semibold text-lg">{listing.name}</h3>
-                        <p className="text-sm text-gray-500 mb-1">
+                  <Link href={`/listings/${listing.slug}`} key={listing.id} className="block">
+                    <div className="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer h-full">
+                      <div className="relative w-full h-48 sm:h-56">
+                        <Image
+                          src={listing.image}
+                          alt={listing.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-5">
+                        <h3 className="font-semibold text-base sm:text-lg mb-2 line-clamp-2">
+                          {listing.name}
+                        </h3>
+                        <p className="text-sm text-gray-500 mb-2">
                           {listing.type} • {listing.location}
                         </p>
-                        <p className="text-blue-600 font-bold">
+                        <p className="text-blue-600 font-bold text-base sm:text-lg">
                           Ksh {listing.price.toLocaleString()}
                         </p>
                       </div>
