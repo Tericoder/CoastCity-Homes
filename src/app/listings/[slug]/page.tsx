@@ -4,20 +4,26 @@ import { listingsData } from '@/app/data/listingsData';
 import TopNav from '@/app/components/TopNav';
 import Footer from '@/app/components/Footer';
 import FloatingIcons from '@/app/components/FloatingIcons';
+import { PageProps } from '@/app/types/types';
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
 
+// type Props = {
+//   params: {
+//     slug: string;
+//   };
+// };
+
+// export function generateStaticParams() {
+//   return listingsData.map((listing) => ({
+//     slug: listing.slug,
+//   }));
+// }
+// Optional if you're doing static generation:
 export function generateStaticParams() {
-  return listingsData.map((listing) => ({
-    slug: listing.slug,
-  }));
+  return listingsData.map((l) => ({ slug: l.slug }));
 }
 
-export default function ListingDetailPage({ params }: Props) {
+export default function ListingDetailPage({ params }:  { params: { slug: string } }) {
   const listing = listingsData.find((l) => l.slug === params.slug);
   if (!listing) return notFound();
 
